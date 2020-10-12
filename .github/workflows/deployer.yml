@@ -1,18 +1,15 @@
-name: Build and Deploy
-on:
-  gollum
+name: Deploy
+on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      #if: github.event.label.name == 'pubish'
       uses: actions/checkout@master
       with:
         submodules: true
 
     - name: Build and Deploy
-      #if: github.event.label.name == 'pubish'
       uses: solybum/hexo-deploy@master
       env:
         PERSONAL_TOKEN: ${{ secrets.MASTER_TOKEN }}

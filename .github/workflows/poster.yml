@@ -1,0 +1,32 @@
+name: Build and Deploy
+on:
+  gollum
+jobs:
+  MyJob:
+    runs-on: ubuntu-latest
+    steps :
+    - name : Prepare repo
+      run : git clone https://github.com/junhyukso/blog_source_public.git && git clone https://github.com/junhyukso/blog_source_public.wiki.git
+
+    - name : Move Documents
+      run : cp -r blog_source_public.wiki/* blog_source_public/source/_posts
+
+    - name : commit and push
+      run : git add . && git commit -m "add post" && git push origin master
+#  build-and-deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - name: Checkout
+#      #if: github.event.label.name == 'pubish'
+#      uses: actions/checkout@master
+#      with:
+#        submodules: true
+#
+#    - name: Build and Deploy
+#      #if: github.event.label.name == 'pubish'
+#      uses: solybum/hexo-deploy@master
+#      env:
+#        PERSONAL_TOKEN: ${{ secrets.MASTER_TOKEN }}
+#        PUBLISH_REPOSITORY: junhyukso/junhyukso.github.io # The repository the action should deploy to.
+#        BRANCH: master  # The branch the action should deploy to.
+#        PUBLISH_DIR: ./public # The folder the action should deploy.
