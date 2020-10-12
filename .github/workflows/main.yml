@@ -3,6 +3,7 @@ on:
   issues:
     types : [opened, edited]
 jobs:
+  if: github.event.label.name == 'pubish' :
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
