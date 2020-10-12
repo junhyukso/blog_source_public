@@ -12,7 +12,7 @@ jobs:
       run : cp -r blog_source_public.wiki/* blog_source_public/source/_posts
 
     - name : commit and push
-      run : git add . && git commit -m "add post" && git push origin master
+      run : cd blog_source_public && git add . && git commit -m "add post" && git push origin master
 #  build-and-deploy:
 #    runs-on: ubuntu-latest
 #    steps:
