@@ -16,6 +16,7 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
+        directory: 'blog_source_public'
         github_token: ${{ secrets.MASTER_TOKEN }}
 #  build-and-deploy:
 #    runs-on: ubuntu-latest
