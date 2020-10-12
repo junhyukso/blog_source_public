@@ -9,7 +9,7 @@ jobs:
       run : git clone https://github.com/junhyukso/blog_source_public.git && git clone https://github.com/junhyukso/blog_source_public.wiki.git
 
     - name : Move Documents
-      run : cp -r blog_source_public.wiki/* blog_source_public/source/_posts
+      run : rm blog_source_public/source/_posts/* && cp -r blog_source_public.wiki/* blog_source_public/source/_posts
 
     - name : commit and push
       run : cd blog_source_public && git config --local user.email "junhyuk@uos.ac.kr" && git config --local user.name "JunhyukSo" && git add . && git commit -m "add post" 
