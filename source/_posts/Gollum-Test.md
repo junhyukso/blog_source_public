@@ -1,3 +1,0 @@
-# Gollum!
-
-Greensdadashkjbniasddasdasdas
