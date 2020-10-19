@@ -1,3 +1,16 @@
+---
+title: Lottery Ticket Hypothesis
+date: 2020/10/19 19:32:00
+categories:
+- DeepLearning
+- Efficient DeepLearning
+- Pruning
+tags:
+- DeepLearning
+- Pruning
+- Sparsity
+---
+
 ## Network Pruning
 Pruning은 딥러닝 모델을 경량화 하기 위한 방법으로, **정확도 손실을 최소로** 하며 모델에서 어느 정도의 **파라미터들을 제거**하는 기법입니다.
 
